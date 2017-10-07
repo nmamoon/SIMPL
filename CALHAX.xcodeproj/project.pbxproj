@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		356A0A341F898E7F00DE6149 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356A0A331F898E7F00DE6149 /* SplashViewController.swift */; };
 		35B5D0E91F88B593001AC08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D0E81F88B593001AC08E /* AppDelegate.swift */; };
 		35B5D0EB1F88B593001AC08E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5D0EA1F88B593001AC08E /* ViewController.swift */; };
 		35B5D0EE1F88B593001AC08E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B5D0EC1F88B593001AC08E /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		356A0A331F898E7F00DE6149 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		35B5D0E51F88B593001AC08E /* CALHAX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CALHAX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B5D0E81F88B593001AC08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35B5D0EA1F88B593001AC08E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				35B5D1161F88B67B001AC08E /* StartViewController.swift */,
+				356A0A331F898E7F00DE6149 /* SplashViewController.swift */,
 				35B5D0E81F88B593001AC08E /* AppDelegate.swift */,
 				35B5D0EA1F88B593001AC08E /* ViewController.swift */,
 				35B5D0EC1F88B593001AC08E /* Main.storyboard */,
@@ -266,6 +269,7 @@
 				35B5D0EB1F88B593001AC08E /* ViewController.swift in Sources */,
 				35B5D0E91F88B593001AC08E /* AppDelegate.swift in Sources */,
 				35B5D1171F88B67B001AC08E /* StartViewController.swift in Sources */,
+				356A0A341F898E7F00DE6149 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +516,7 @@
 				35B5D10F1F88B593001AC08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35B5D1101F88B593001AC08E /* Build configuration list for PBXNativeTarget "CALHAXTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +525,7 @@
 				35B5D1121F88B593001AC08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35B5D1131F88B593001AC08E /* Build configuration list for PBXNativeTarget "CALHAXUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +534,7 @@
 				35B5D1151F88B593001AC08E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

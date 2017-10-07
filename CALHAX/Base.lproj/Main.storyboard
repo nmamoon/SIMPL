@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kGs-Bf-9iU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -112,6 +113,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="ZfJ-bz-jBE">
+            <objects>
+                <viewController id="kGs-Bf-9iU" customClass="SplashViewController" customModule="CALHAX" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vuh-va-YCZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="f0s-Fh-Jl4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OM3-5t-NkR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQb-d2-hOx">
+                                <rect key="frame" x="70" y="190" width="240" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sQb-d2-hOx" secondAttribute="height" multiplier="646:458" id="f6H-9S-gcd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJn-X6-NOq">
+                                <rect key="frame" x="268" y="98" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sQb-d2-hOx" firstAttribute="top" secondItem="vuh-va-YCZ" secondAttribute="bottom" constant="180" id="BYp-ae-38R"/>
+                            <constraint firstItem="sQb-d2-hOx" firstAttribute="leading" secondItem="OM3-5t-NkR" secondAttribute="leadingMargin" constant="10" id="E7x-vN-gIr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sQb-d2-hOx" secondAttribute="trailing" constant="10" id="PR9-Us-75w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="NEWPIC" destination="sQb-d2-hOx" id="NB5-SF-lNE"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="SplashToMain" id="Rn5-mm-k6l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="De9-ch-VJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-676" y="136.28185907046478"/>
         </scene>
     </scenes>
 </document>

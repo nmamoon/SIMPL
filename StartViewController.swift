@@ -26,7 +26,7 @@ class StartViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var outputbutton: UIButton!
     
-    var gradient : CAGradientLayer?;
+
     
     var typing = false
     
@@ -62,39 +62,11 @@ class StartViewController: UIViewController, UITextViewDelegate {
         TitleLabel.layer.masksToBounds = true
         TitleLabel.layer.cornerRadius = 10
         TitleLabel.backgroundColor = UIColor(hue: 0.2306, saturation: 0.26, brightness: 0.99, alpha: 1.0)
-        self.gradient = CAGradientLayer()
-        self.gradient?.frame = self.view.bounds
         
-        
-        
-        var col = UIColor(hue: 0.275, saturation: 0.68, brightness: 0.97, alpha: 1.0)
-        
-        self.gradient?.colors = [ col.cgColor, col.cgColor]
-        self.view.layer.insertSublayer(self.gradient!, at: 0)
-        
-        animateLayer()
 
     }
     
-    func animateLayer(){
-        
-        var fromColors = self.gradient?.colors
-        var toColors: [AnyObject] = [ UIColor.clear.cgColor, UIColor.clear.cgColor]
-        self.gradient?.colors = toColors // You missed this line
-        var animation : CABasicAnimation = CABasicAnimation(keyPath: "colors")
-        
-        //var animation : CABasicAnimation = CABasicAnimation(keyPath: "colors")
-        print("three")
-        animation.fromValue = fromColors
-        animation.toValue = toColors
-        animation.duration = 2.00
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeForwards
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        //animation.delegate = self as UIViewController
-        
-        self.gradient?.add(animation, forKey:"animateGradient")
-    }
+  
     
     
     func textViewDidBeginEditing(_ textView: UITextView) {
