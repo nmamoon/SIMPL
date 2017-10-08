@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import AVFoundation
 
 
 class StartViewController: UIViewController, UITextViewDelegate {
@@ -66,8 +67,18 @@ class StartViewController: UIViewController, UITextViewDelegate {
 
     }
     
-  
+  /*
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
+        let mutableAttributedString = NSMutableAttributedString(string: utterance.speechString)
+        mutableAttributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: characterRange)
+        OutPutBox.attributedText = mutableAttributedString
+    }
     
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        OutPutBox.attributedText = NSAttributedString(string: utterance.speechString)
+    }
+ 
+ */
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         //PostBox.text = ""
@@ -107,14 +118,19 @@ class StartViewController: UIViewController, UITextViewDelegate {
         TextBox.endEditing(true)
         outputbutton.backgroundColor = UIColor(hue: 0.2306, saturation: 0.26, brightness: 0.99, alpha: 1.0)
         
+        
+        
+        
+        
+        
         var textToSimplify = TextBox.text
         
         
-        
-        let parameters = ["link": "http://techcrunch.com/2015/04/06/john-oliver-just-changed-the-surveillance-reform-debate"] as [String : Any]
+        /*
+        let parameters = ["link": "http://techcrunch.com/2015/04/06/john-oliver-just-changed-the-surveillance-reform-debate"] as [String : String]
         
         //create the url with URL
-        let url = URL(string: "www.thisismylink.com/postName.php")! //change the url
+        let url = URL(string: "http://simpl-182222.appspot.com/simpl/url")! //change the url
         
         //create the session object
         let session = URLSession.shared
@@ -133,6 +149,11 @@ class StartViewController: UIViewController, UITextViewDelegate {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         //create dataTask using the session object to send data to the server
+        
+        
+        
+        
+        
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
             
             guard error == nil else {
@@ -150,6 +171,13 @@ class StartViewController: UIViewController, UITextViewDelegate {
                     // handle json...
                     var text = json["return"] as! String
                     self.OutPutBox.text = text
+                    let string = self.OutPutBox.text!
+                   // let utterance = AVSpeechUtterance(string: string)
+                   // utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
+                    
+                   // let synthesizer = AVSpeechSynthesizer()
+                   // synthesizer.delegate = self
+                    //synthesizer.speak(utterance)
                     
                     
                 }
@@ -158,8 +186,43 @@ class StartViewController: UIViewController, UITextViewDelegate {
             }
         })
         task.resume()
+         */
+        
+        var bullshit = "Although the Snowden leaks certainly proved to be much more than a “three-day story,” American surveillance practices remain largely the same two years later. Oliver’s interview is timely as we approach an important deadline for surveillance reform on June 1."
         
         
+      
+        var responseValue: String?
+        print("A")
+        var request = URLRequest(url: URL(string: "https://simpl-182222.appspot.com/simpl/url")!)
+         print("B")
+        request.httpMethod = "POST"
+        let postString = "link=\(textToSimplify)"
+        request.httpBody = postString.data(using: .utf8)
+         print("C")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+            
+                // check for fundamental networking error
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(String(describing: responseString))")
+            responseValue = responseString
+            self.OutPutBox.text = responseValue!
+        }
+        task.resume()
+ 
+ 
+        
+      
         
         
         
